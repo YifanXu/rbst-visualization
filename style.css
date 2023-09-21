@@ -1,0 +1,117 @@
+html, body {
+  width:  100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-bottom: 20px;
+  padding: 5px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  height: calc(100vh - 190px);
+}
+
+#cv {
+  width: 100%;
+}
+
+#message {
+  padding: 10px;
+  background-color: lightgreen;
+  font-size: 1.5rem;
+}
+
+#message.inprogress {
+  background-color: lightgoldenrodyellow;
+}
+
+.leftPane {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 15rem;
+}
+
+.contentDiv {
+  border: 1px solid black;
+  flex-grow: 1;
+}
+
+#numberForm {
+  height: 3rem;
+  display: flex;
+  align-items: stretch;
+  padding: 0px;
+  margin-bottom: 0px;
+}
+
+#numberForm > * {
+  margin: 0px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+
+#numInput {
+  width: 10rem;
+  padding: 5px;
+  font-size: 1.2rem;
+}
+
+#addButton {
+  border-left: 0px;
+  width: calc(100% - 10rem);
+  font-size: 1.2rem;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#operationControl {
+  display: grid;
+  grid-template-columns:  2rem auto 2rem;
+  grid-template-rows: 2rem;
+}
+
+#operationControl > button {
+  border-width: 1px;
+  border-radius: 0px;
+  font-size: 1.2rem;
+}
+
+#operationControl > button:hover:not([disabled]) {
+  background-color: lightgray;
+}
+
+#operationLabel {
+  padding: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#historyList {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.historyItem {
+  padding: 5px;
+}
+
+.historyItem:hover {
+  background-color: lightgray;
+}
+
+.historyItem.active {
+  background-color: gray;
+  color:white
+}

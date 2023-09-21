@@ -1,0 +1,45 @@
+<meta charset="utf-8"/>
+<html>
+    <head>
+        <title>Maze Ree</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <h2 class="pageHeader">Red-Black Tree Visualization Tool</h2>
+            <p>This webapp animates the insertion process for <a href="https://sedgewick.io/wp-content/themes/sedgewick/papers/2008LLRB.pdf">Sedgewick's Left-Leaning Red-Black Binary Search Tree</a>.</p>
+            <p>Use the left panel to insert new elements and navigate through the timeline of the operation. Click on the canvas to advance the animation.</p>
+            <p></p>
+            <div>
+                <button class="enableOnAnimate" onclick="skipCurrentAnimation()" disabled>skip current animation</button>
+                <button class="disableOnAnimate" onclick="handleResetTree()">Clear Tree</button>
+                <button class="disableOnAnimate" onclick="initTree(30)">Initialize Tree</button>
+            </div> 
+        </div>
+        <div class="main">
+            <div class="leftPane">
+                <form id="numberForm" onsubmit="return onInsertValue(event)">
+                    <input class="disableOnAnimate" type="number" id="numInput"/>
+                    <button class="disableOnAnimate" id="addButton">Insert</button>
+                </form>
+                <div id="operationControl">
+                    <button id="prevStepButton" onclick="handleRewind(animationStep - 1)">&lt;</button>
+                    <button id="operationLabel" onclick="skipCurrentAnimation()"></button>
+                    <button id="nextStepButton" onclick="handleRewind(animationStep + 1)">&gt;</button>
+                </div>
+                <div id="historyList">
+                    <div class="historyItem">1. Insert left on 25</div>
+                    <div class="historyItem">2. Insert left on 25</div>
+                    <div class="historyItem">3. Insert left on 25</div>
+                    <div class="historyItem">4. Insert left on 25</div>
+                </div>
+            </div>
+            <div class="contentDiv">
+                <div id="message"></div>
+                <canvas id="cv">Your browser doesn't support canvas</canvas>
+            </div>
+        </div>
+    </body>
+</html>
